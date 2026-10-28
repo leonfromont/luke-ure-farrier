@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leonfromont.github.io/luke-ure-farrier/sitemap.xml
