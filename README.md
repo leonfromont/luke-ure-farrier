@@ -46,7 +46,7 @@ The copy was written without input from Luke, so it stays deliberately general. 
 - **Services.** Hot and cold shoeing, trimming, remedial and corrective work, young horses. Remove anything he does not offer, add anything missing (for example drafts, donkeys, hoof boots).
 - **About page.** Add years of experience, where he trained, any qualifications or association membership, and what he rides or competes in. No credentials are claimed at the moment.
 - **Hours.** The contact page says "by appointment" only.
-- **Photos.** One photo of Luke at the forge is used twice: a wide darkened crop behind the home hero (`images/hero-forge.jpg`) and a 4:5 crop on the About page (`images/luke-forge.jpg`). Both are derived from `images/luke.jpeg`, which is git-ignored because it is 3MB. A second photo of Luke actually shoeing a horse would be worth adding.
+- **Photos.** One photo of Luke at the forge is used twice: a wide darkened crop behind the home hero (`images/luke-hero.jpg`) and a 4:5 crop on the About page (`images/luke-about.jpg`). Both are derived from `images/luke.jpeg`, which is git-ignored because it is 3MB. A second photo of Luke actually shoeing a horse would be worth adding.
 - **Social links.** None included. Add Facebook or Instagram links to the footer and as `sameAs` in the JSON-LD if he has them.
 
 ## Optional extras
