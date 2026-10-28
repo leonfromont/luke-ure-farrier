@@ -9,25 +9,23 @@ Static website for Luke Ure, a farrier based in Otago, New Zealand. Built the sa
 | `index.html` | Home: hero, services summary, how Luke works, service area, call to action |
 | `services.html` | Service detail, "before Luke arrives" checklist, FAQ (with FAQPage structured data) |
 | `about.html` | Short bio and approach |
-| `contact.html` | Call, text and email cards, what to tell Luke when booking, service area |
+| `contact.html` | Call and text cards, what to tell Luke when booking, service area |
 | `404.html` | Not found page (GitHub Pages serves this automatically) |
 
 Supporting files: `css/styles.css`, `js/main.js` (mobile menu, header shadow, optional GA4 click events), `images/` (favicon, logo, Open Graph image), `robots.txt`, `sitemap.xml`.
 
 ## Before going live: placeholders to replace
 
-Luke's phone number (021 0855 4172) is already in place. These values are still placeholders and appear in several files. Replace every occurrence.
+Luke's phone number (021 0855 4172) is in place and he has no email address, so the site is call and text only. This value is still a placeholder and appears in several files. Replace every occurrence.
 
 | Placeholder | Where it appears | Replace with |
 |-------------|------------------|--------------|
-| `luke@lukeurefarrier.co.nz` | Footer, contact page, JSON-LD | Luke's email |
 | `https://leonfromont.github.io/luke-ure-farrier` | Canonical and Open Graph tags, JSON-LD, `robots.txt`, `sitemap.xml` | The real domain once chosen (currently the GitHub Pages address) |
 
-One-liner to do both at once (edit the right-hand values first):
+One-liner (edit the right-hand value first):
 
 ```bash
 sed -i \
-  -e 's/luke@lukeurefarrier\.co\.nz/luke@example.co.nz/g' \
   -e 's#https://leonfromont\.github\.io/luke-ure-farrier#https://example.co.nz#g' \
   *.html robots.txt sitemap.xml
 ```
@@ -48,7 +46,7 @@ The copy was written without input from Luke, so it stays deliberately general. 
 ## Optional extras
 
 - **Google Analytics.** Add the gtag snippet to the `<head>` of each page as in `tnr_website`. `js/main.js` already sends `phone_click`, `sms_click` and `email_click` events when `gtag` is present.
-- **Contact form.** Left out on purpose. Farrier bookings mostly happen by phone or text. If a form is wanted, copy the Formspree form from `tnr_website/contact.html`.
+- **Contact form.** Left out on purpose. Luke has no email address and bookings happen by phone or text. If a form is ever wanted, Formspree can deliver to any inbox; copy the form from `tnr_website/contact.html`.
 - **Google Business Profile.** For "farrier near me" searches this matters more than the website itself. Set one up as a service-area business, use the same name, phone and website as the site, and ask happy clients for reviews.
 
 ## Deploying (GitHub Pages, same as tnr_website)
