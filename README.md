@@ -16,21 +16,17 @@ Supporting files: `css/styles.css`, `js/main.js` (mobile menu, header shadow, op
 
 ## Before going live: placeholders to replace
 
-These values are placeholders and appear in several files. Replace every occurrence.
+Luke's phone number (021 0855 4172) is already in place. These values are still placeholders and appear in several files. Replace every occurrence.
 
 | Placeholder | Where it appears | Replace with |
 |-------------|------------------|--------------|
-| `027 000 0000` | All pages (header, footer, CTA, contact) | Luke's mobile number as displayed |
-| `+64270000000` | `tel:` and `sms:` links, JSON-LD | Same number in international format, no spaces |
 | `luke@lukeurefarrier.co.nz` | Footer, contact page, JSON-LD | Luke's email |
 | `https://leonfromont.github.io/luke-ure-farrier` | Canonical and Open Graph tags, JSON-LD, `robots.txt`, `sitemap.xml` | The real domain once chosen (currently the GitHub Pages address) |
 
-One-liner to do all four at once (edit the right-hand values first):
+One-liner to do both at once (edit the right-hand values first):
 
 ```bash
 sed -i \
-  -e 's/027 000 0000/027 123 4567/g' \
-  -e 's/+64270000000/+64271234567/g' \
   -e 's/luke@lukeurefarrier\.co\.nz/luke@example.co.nz/g' \
   -e 's#https://leonfromont\.github\.io/luke-ure-farrier#https://example.co.nz#g' \
   *.html robots.txt sitemap.xml
