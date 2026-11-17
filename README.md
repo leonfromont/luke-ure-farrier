@@ -14,20 +14,14 @@ Static website for Luke Ure, a farrier based in Otago, New Zealand. Built the sa
 
 Supporting files: `css/styles.css`, `js/main.js` (mobile menu, header shadow, optional GA4 click events), `images/` (favicon, logo, Open Graph image), `robots.txt`, `sitemap.xml`.
 
-## Before going live: placeholders to replace
+## Site address
 
-Luke's phone number (021 0855 4172) is in place and he has no email address, so the site is call and text only. This value is still a placeholder and appears in several files. Replace every occurrence.
+The site lives at https://lukeurefarrier.com. Every canonical and Open Graph tag, the JSON-LD, `robots.txt` and `sitemap.xml` use that address, and the `CNAME` file in the repo root tells GitHub Pages to serve it there. Luke's phone number (021 0855 4172) is on every page. He has no email address, so the site is call and text only.
 
-| Placeholder | Where it appears | Replace with |
-|-------------|------------------|--------------|
-| `https://leonfromont.github.io/luke-ure-farrier` | Canonical and Open Graph tags, JSON-LD, `robots.txt`, `sitemap.xml` | The real domain once chosen (currently the GitHub Pages address) |
-
-One-liner (edit the right-hand value first):
+If the domain ever changes, edit `CNAME` and run:
 
 ```bash
-sed -i \
-  -e 's#https://leonfromont\.github\.io/luke-ure-farrier#https://example.co.nz#g' \
-  *.html robots.txt sitemap.xml
+sed -i -e 's#https://lukeurefarrier\.com#https://new-domain.example#g' *.html robots.txt sitemap.xml
 ```
 
 Also update `images/og-image.svg` if the wording there should change, then run `./create-og-image.sh` to regenerate `images/og-image.png` (needs `rsvg-convert`, from the `librsvg2-bin` package).
@@ -51,9 +45,19 @@ The copy was written without input from Luke, so it stays deliberately general. 
 
 ## Deploying (GitHub Pages, same as tnr_website)
 
-Live at https://leonfromont.github.io/luke-ure-farrier, served from the `main` branch root of `github.com/leonfromont/luke-ure-farrier`. Push to `main` to deploy.
+Served from the `main` branch root of `github.com/leonfromont/luke-ure-farrier`. Push to `main` to deploy; the old address https://leonfromont.github.io/luke-ure-farrier/ redirects to the custom domain.
 
-For a custom domain, add a `CNAME` file containing the bare domain, point the domain's DNS at GitHub Pages, then run the sed above to update the site URLs.
+The domain `lukeurefarrier.com` is registered at Cloudflare (Leon's account) and its DNS lives there too. Records that must exist, all set to "DNS only" (grey cloud, not proxied) so GitHub can issue the HTTPS certificate:
+
+| Type | Name | Content |
+|------|------|---------|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `leonfromont.github.io` |
+
+"Enforce HTTPS" is switched on in the repo's Pages settings once GitHub has issued the certificate, which can take up to an hour after the DNS records appear.
 
 ## Local preview
 
